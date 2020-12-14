@@ -1,0 +1,60 @@
+﻿@page
+@model Touchstone.Pages.Batches.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Batch[0].batchName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Batch[0].startDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Batch[0].endDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Batch[0].courseCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Batch[0].branch_ID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Batch) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.batchName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.startDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.endDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.courseCost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.branch_ID)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.batchID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.batchID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.batchID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

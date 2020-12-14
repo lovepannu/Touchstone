@@ -1,0 +1,52 @@
+﻿@page
+@model Touchstone.Pages.Batches.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Batch</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Batch.batchName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Batch.batchName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Batch.startDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Batch.startDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Batch.endDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Batch.endDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Batch.courseCost)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Batch.courseCost)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Batch.branch_ID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Batch.branch_ID)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Batch.batchID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

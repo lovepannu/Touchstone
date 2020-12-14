@@ -1,0 +1,42 @@
+﻿@page
+@model Touchstone.Pages.Branchs.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Branch[0].branchName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Branch[0].branchAddress)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Branch) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.branchName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.branchAddress)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.branchID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.branchID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.branchID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

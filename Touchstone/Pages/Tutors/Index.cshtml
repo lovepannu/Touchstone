@@ -1,0 +1,60 @@
+﻿@page
+@model Touchstone.Pages.Tutors.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Tutor[0].tutorName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tutor[0].tutorEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tutor[0].tutorMobile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tutor[0].tutorAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tutor[0].branch_ID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Tutor) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.tutorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tutorEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tutorMobile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tutorAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.branch_ID)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.tutorID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.tutorID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.tutorID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,49 @@
+﻿@page
+@model Touchstone.Pages.Tutors.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Tutor</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tutor.tutorName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tutor.tutorName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tutor.tutorEmail)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tutor.tutorEmail)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tutor.tutorMobile)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tutor.tutorMobile)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tutor.tutorAddress)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tutor.tutorAddress)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tutor.branch_ID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tutor.branch_ID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Tutor.tutorID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
